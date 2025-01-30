@@ -13,12 +13,12 @@ import (
 )
 
 var (
-	profile, region, gcpCredFilePath, localStackPort string
-	useLocalStack                                    bool
-	version                                          = "v0.1.4"
-	commit                                           = "dev"
-	date                                             = "today"
-	rootCmd                                          = &cobra.Command{
+	clouds, profile, region, gcpCredFilePath, localStackPort string
+	useLocalStack                                            bool
+	version                                                  = "v0.1.4"
+	commit                                                   = "dev"
+	date                                                     = "today"
+	rootCmd                                                  = &cobra.Command{
 		Use:   `cloudlens`,
 		Short: `cli for cloud services`,
 		Long:  `cli for cloud services[aws,gcp]`,
@@ -29,7 +29,7 @@ var (
 )
 
 func init() {
-	rootCmd.AddCommand(versionCmd(), updateCmd(), awsCommand(), gcpCommand())
+	rootCmd.AddCommand(versionCmd(), updateCmd(), awsCommand(), gcpCommand(), ostCommand())
 
 }
 

@@ -212,6 +212,9 @@ func (a *App) showCloudSelectionScreen() {
 		"GCP": func() {
 			a.handleCloudSelection(internal.GCP)
 		},
+		"OST": func() {
+			a.handleCloudSelection(internal.OST)
+		},
 	}, a.version)
 	a.App.SetFocus(cloudSelectScreen.GetFocusItem())
 	a.Main.AddPage(internal.MAIN_SCREEN, cloudSelectScreen, true, true)
